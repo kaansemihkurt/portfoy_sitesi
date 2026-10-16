@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-posta | Kaan Semih Kurt</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#060b1d">
+<style>
+:root{--bg:#060b1d;--card:#0c1633;--ink:#e8eeff;--mut:#9aaad2;--line:#1b2b57;--accent:#8b5cf6;--ok:#6ee7b7;--err:#fca5a5}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;display:grid;place-items:center;padding:16px;background:radial-gradient(900px 520px at 88% -8%,rgba(109,40,217,.25),transparent 62%),radial-gradient(760px 520px at -6% 28%,rgba(20,38,90,.55),transparent 62%),var(--bg);color:var(--ink);font:400 1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.card{width:100%;max-width:440px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 24px;box-shadow:0 18px 40px -26px rgba(0,0,0,.85)}
+.eyebrow{margin:0 0 4px;color:var(--mut);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:0 0 20px;font-size:1.35rem;font-weight:600}
+.addr{margin:0 0 20px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03);font:500 1.02rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;user-select:all}
+button{cursor:pointer;border:0;border-radius:10px;padding:11px 22px;background:linear-gradient(90deg,#14265a,#6d28d9);color:#fff;font:600 .95rem system-ui,sans-serif}
+button:hover{filter:brightness(1.12)}
+button:focus-visible,a:focus-visible{outline:2px solid #a78bfa;outline-offset:3px}
+.st{min-height:1.6em;margin:14px 0 0;color:var(--mut);font-size:.92rem}
+.st.ok{color:var(--ok)}.st.err{color:var(--err)}
+.links{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--mut)}
+.links a{color:#a78bfa;text-decoration:none}.links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main class="card">
+  <p class="eyebrow">Kaan Semih Kurt</p>
+  <h1 id="h">E-posta adresi</h1>
+  <p class="addr" id="addr">archforlive@gmail.com</p>
+  <button type="button" id="btn">Kopyala</button>
+  <p class="st" id="st" role="status" aria-live="polite"></p>
+  <p class="links"><a id="gh" href="https://github.com/kaansemihkurt">GitHub</a> · <a id="home" href="index.html">Ana sayfa</a> · <a id="open" href="mailto:archforlive@gmail.com">E-posta uygulamasında aç</a></p>
+</main>
+<script>
+(function () {
+  var MAIL = 'archforlive@gmail.com';
+  var L = {
+    tr: { h: 'E-posta adresi', copy: 'Kopyala', ok: 'Kopyalandı ✓', ask: 'Kopyalamak için düğmeye dokun.', fail: 'Kopyalanamadı; adresi seçip elle kopyalayabilirsin.', home: 'Ana sayfa', open: 'E-posta uygulamasında aç' },
+    en: { h: 'Email address', copy: 'Copy', ok: 'Copied ✓', ask: 'Tap the button to copy.', fail: 'Could not copy; select the address and copy it manually.', home: 'Home', open: 'Open in mail app' },
+    ja: { h: 'メールアドレス', copy: 'コピー', ok: 'コピーしました ✓', ask: 'ボタンを押してコピーしてください。', fail: 'コピーできませんでした。アドレスを選択して手動でコピーしてください。', home: 'ホーム', open: 'メールアプリで開く' }
+  };
+  var lang = String(navigator.language || 'en').slice(0, 2).toLowerCase();
+  var t = L[lang] || L.en;
+  document.documentElement.lang = L[lang] ? lang : 'en';
+  var $ = function (id) { return document.getElementById(id); };
+  $('h').textContent = t.h; $('btn').textContent = t.copy;
+  $('home').textContent = t.home; $('open').textContent = t.open;
+  var st = $('st');
+
+  function legacy() {
+    var ta = document.createElement('textarea');
+    ta.value = MAIL; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copy() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(MAIL).then(function () { return true; }, function () { return legacy(); });
+    }
+    return Promise.resolve(legacy());
+  }
+  function run(auto) {
+    copy().then(function (ok) {
+      if (ok) { st.textContent = t.ok; st.className = 'st ok'; }
+      else { st.textContent = auto ? t.ask : t.fail; st.className = 'st' + (auto ? '' : ' err'); }
+    });
+  }
+  $('btn').addEventListener('click', function () { run(false); });
+  run(true);
+})();
+</script>
+</body>
+</html>
