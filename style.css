@@ -1,3 +1,8 @@
+
+/* proje kartı önizleme görseli */
+.thumb-link{display:block;margin-bottom:16px}
+.thumb{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--edge)}
+.foot2{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
 :root{--bg:#0d1026;--ink:#eceaff;--mut:#a9a8d4;--amber:#ffc978;--cyan:#9fe6ea;--vio:#b7a6ff;--glass:rgba(255,255,255,.05);--edge:rgba(184,190,240,.16);--hd:"Space Grotesk",Inter,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:84px}
