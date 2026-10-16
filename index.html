@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaan Semih Kurt | Büyük Veri Analisti Adayı</title>
+<meta name="description" content="Kaan Semih Kurt - Büyük veri analizi, yazılım ve donanım. Portfolyo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<div id="prog" aria-hidden="true"></div>
+<nav aria-label="Ana menü">
+  <div class="wrap">
+    <a class="brand" href="index.html">&lt;kaan/&gt;</a>
+    <ul>
+      <li><a href="index.html" aria-current="page">Ana sayfa</a></li>
+      <li><a href="projeler.html">Projeler</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="wrap">
+  <header class="hero">
+    <p class="label">MCBÜ · Son sınıf öğrencisi</p>
+    <h1>Kaan Semih<br><span class="grad">Kurt</span></h1>
+    <p class="role"><span data-type>Büyük Veri Analistliği Öğrencisi</span><i class="caret"></i></p>
+    <p class="lead">Veri analizi, yazılım ve donanım alanlarında çalışan; öğrenmeye açık ve proje odaklı biriyim.</p>
+    <div class="actions">
+      <a class="btn pri" href="projeler.html">Projelerimi gör →</a>
+      <a class="btn" href="#hakkimda">Hakkımda</a>
+    </div>
+    <div class="stats">
+      <div class="glass"><b>9 ay</b><span>endüstriyel staj</span></div>
+      <div class="glass"><b>3</b><span>proje</span></div>
+      <div class="glass"><b>3</b><span>programlama dili</span></div>
+    </div>
+  </header>
+
+  <section id="hakkimda" class="rv">
+    <h2>Hakkımda</h2>
+    <div class="glass about">
+      <p>Manisa Celal Bayar Üniversitesi Büyük Veri Analistliği programının son sınıfındayım. Lisede makine teknikerliği okuyarak edindiğim mühendislik temellerini ve analitik düşünme becerimi, havacılık sanayisindeki 9 aylık stajımla profesyonel iş ortamına taşıdım.</p>
+      <p>Python ve C# ile yazılım projeleri geliştiriyorum. Donanım mimarisi bilgimle sistem performansını artıracak çözümler üretebiliyorum. Teknik problem çözmeyi ve yeni şeyler öğrenmeyi seviyorum.</p>
+    </div>
+  </section>
+
+  <section id="yolculuk">
+    <h2 class="rv">Eğitim ve deneyim</h2>
+    <div class="tl">
+      <article class="glass lift rv"><i class="dot now"></i>
+        <p class="label" style="color:var(--amber)">ŞİMDİ · EĞİTİM</p>
+        <h3>Büyük Veri Analistliği (Ön Lisans)</h3>
+        <p class="sub">Manisa Celal Bayar Üniversitesi · Devam ediyor, son yıl</p>
+      </article>
+      <article class="glass lift rv"><i class="dot"></i>
+        <p class="label" style="color:var(--vio)">2024 · EĞİTİM</p>
+        <h3>Makine Teknikerliği</h3>
+        <p class="sub">MOSTEM Mesleki ve Teknik Anadolu Lisesi</p>
+      </article>
+      <article class="glass lift rv"><i class="dot"></i>
+        <p class="label" style="color:var(--cyan)">2023–2024 · DENEYİM (9 AY)</p>
+        <h3>Makine Teknikeri (Stajyer)</h3>
+        <p class="sub" style="margin-bottom:12px">HMS Uçak ve Havacılık Sanayi, Manisa</p>
+        <ul>
+          <li>Lise son sınıfta, havacılık ve uzay sanayisinin yüksek kalite standartlarındaki üretim süreçlerinde görev aldım.</li>
+          <li>Fabrika ortamında endüstriyel disiplin, iş güvenliği ve takım çalışması konularında doğrudan deneyim kazandım.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="yetenekler">
+    <h2 class="rv">Yetenekler</h2>
+    <div class="skills">
+      <div class="glass lift rv"><h3>// yazılım ve programlama</h3>
+        <div class="tags"><span class="tag s">Python · İyi</span><span class="tag s">C# · İyi</span><span class="tag">Java · Temel</span></div></div>
+      <div class="glass lift rv"><h3>// bilgisayar ve donanım</h3>
+        <div class="tags"><span class="tag">Donanım mimarisi</span><span class="tag">Parça uyumluluğu</span><span class="tag">Sistem toplama</span><span class="tag">Darboğaz (bottleneck) analizi</span><span class="tag">Performans optimizasyonu</span><span class="tag">Arıza tespiti</span><span class="tag">Donanım iyileştirme</span></div></div>
+      <div class="glass lift rv"><h3>// araçlar</h3>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">Word</span><span class="tag">PowerPoint</span></div>
+        <p class="note">Raporlama, veri tablolama ve proje sunumu için ileri düzeyde.</p></div>
+    </div>
+  </section>
+</main>
+<footer>© <span id="yr"></span> Kaan Semih Kurt · Şehzadeler, Manisa</footer>
+<script src="main.js"></script>
+</body>
+</html>
