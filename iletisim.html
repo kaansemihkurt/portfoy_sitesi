@@ -4,123 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>İletişim | Kaan Semih Kurt</title>
-<meta name="description" content="Kaan Semih Kurt ile iletişime geç: iş teklifi, veri bilimi danışmanlığı veya sorular için form.">
+<meta name="description" content="Kaan Semih Kurt ile iletişime geç.">
+<meta name="theme-color" content="#060b1d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%235ea6ff'/%3E%3Ctext x='16' y='21.5' font-size='15' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%2304112b'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 </head>
-<body>
-<canvas id="rain" aria-hidden="true"></canvas>
-<div id="prog" aria-hidden="true"></div>
-<nav aria-label="Ana menü">
+<body data-page="contact">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gh" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol></svg>
+<a class="skip" href="#main" data-i="skip">İçeriğe geç</a>
+<header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html">&lt;kaan/&gt;</a>
-    <ul>
-      <li><a href="index.html">Ana sayfa</a></li>
-      <li><a href="projeler.html">Projeler</a></li>
-      <li><a href="iletisim.html" aria-current="page">İletişim</a></li>
-    </ul>
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">K</span>Kaan Semih Kurt</a>
+    <nav aria-label="Ana menü" data-i-attr="aria-label:nav.main">
+      <ul class="nav">
+        <li><a href="index.html" data-i="nav.home">Ana sayfa</a></li>
+        <li><a href="projeler.html" data-i="nav.projects">Projeler</a></li>
+        <li><a href="iletisim.html" aria-current="page" data-i="nav.contact">İletişim</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Dil" data-i-attr="aria-label:lang.label">
+        <button type="button" data-lang="tr" lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ja" lang="ja" aria-pressed="false">日本語</button>
+      </div>
+      <button type="button" class="ic" id="theme" aria-label="Temayı değiştir" data-i-attr="aria-label:theme.toggle">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
   </div>
-</nav>
-<main class="wrap">
-  <div class="contact">
-    <h1>İletişim</h1>
-    <p>Formu doldur, mesajın doğrudan bana ulaşsın.</p>
-    <!-- action: Formspree'de oluşturduğun formun adresiyle değiştir (örn. https://formspree.io/f/xyzabcde) -->
-    <form id="contact-form" class="glass" action="https://formspree.io/f/xdekjqaw" method="POST" accept-charset="UTF-8">
-      <div class="fld">
-        <label for="ad">Ad</label>
-        <input id="ad" name="ad" type="text" placeholder="Adın" autocomplete="given-name" required>
-      </div>
-      <div class="fld">
-        <label for="soyad">Soyad</label>
-        <input id="soyad" name="soyad" type="text" placeholder="Soyadın" autocomplete="family-name" required>
-      </div>
-      <div class="fld">
-        <label for="email">E-posta adresi</label>
-        <input id="email" name="email" type="email" placeholder="ornek@mail.com" autocomplete="email" required>
-      </div>
-      <div class="fld">
-        <label for="telefon">Telefon numarası</label>
-        <input id="telefon" name="telefon" type="tel" inputmode="tel" placeholder="05XX XXX XX XX" autocomplete="tel" pattern="[0-9+()\s\-]{10,18}" title="Geçerli bir telefon numarası gir (örn. 0507 045 45 07)" required>
-      </div>
-      <div class="fld full">
-        <label for="neden">İletişim nedeni</label>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head rv">
+    <p class="eyebrow">02 / 03</p>
+    <h1 data-i="c.title">İletişim</h1>
+    <p data-i="c.sub">Formu doldur, mesajın doğrudan bana ulaşsın.</p>
+  </div>
+  <div class="contact" style="margin-top:34px">
+    <aside class="side card rv">
+      <h3 data-i="c.side">Diğer yollar</h3>
+      <a class="rep" href="https://github.com/kaansemihkurt" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 16 16"><use href="#gh"/></svg><span data-i="more.b">GitHub profilim</span></a>
+    </aside>
+    <form id="contact-form" class="card rv" action="https://formspree.io/f/xdekjqaw" method="POST" accept-charset="UTF-8">
+      <div class="fld"><label for="ad" data-i="f.ad">Ad</label>
+        <input id="ad" name="ad" type="text" placeholder="Adın" data-i-attr="placeholder:f.ad.ph" autocomplete="given-name" required></div>
+      <div class="fld"><label for="soyad" data-i="f.soyad">Soyad</label>
+        <input id="soyad" name="soyad" type="text" placeholder="Soyadın" data-i-attr="placeholder:f.soyad.ph" autocomplete="family-name" required></div>
+      <div class="fld"><label for="email" data-i="f.email">E-posta adresi</label>
+        <input id="email" name="email" type="email" placeholder="ornek@mail.com" autocomplete="email" required></div>
+      <div class="fld"><label for="telefon" data-i="f.tel">Telefon numarası</label>
+        <input id="telefon" name="telefon" type="tel" inputmode="tel" placeholder="05XX XXX XX XX" autocomplete="tel" pattern="[0-9+()\s\-]{10,18}" title="Geçerli bir telefon numarası gir (örn. 05XX XXX XX XX)" data-i-attr="title:f.tel.title" required></div>
+      <div class="fld full"><label for="neden" data-i="f.neden">İletişim nedeni</label>
         <select id="neden" name="iletisim_nedeni" required>
-          <option value="" disabled selected>Bir neden seç</option>
-          <option value="İş Teklifi">İş Teklifi</option>
-          <option value="Proje/Veri Bilimi Danışmanlığı">Proje/Veri Bilimi Danışmanlığı</option>
-          <option value="Soru">Soru</option>
-          <option value="Diğer">Diğer</option>
-        </select>
-      </div>
-      <div class="fld full">
-        <label for="mesaj">Detaylı mesaj</label>
-        <textarea id="mesaj" name="mesaj" placeholder="Merhaba Kaan, ..." maxlength="1000" required></textarea>
-        <span class="count" id="count">0 / 1000</span>
-      </div>
-      <!-- Spam koruması: botlar doldurur, insanlar görmez -->
+          <option value="" disabled selected data-i="f.neden.ph">Bir neden seç</option>
+          <option value="İş Teklifi" data-i="f.o1">İş Teklifi</option>
+          <option value="Proje/Veri Bilimi Danışmanlığı" data-i="f.o2">Proje/Veri Bilimi Danışmanlığı</option>
+          <option value="Soru" data-i="f.o3">Soru</option>
+          <option value="Diğer" data-i="f.o4">Diğer</option>
+        </select></div>
+      <div class="fld full"><label for="mesaj" data-i="f.mesaj">Detaylı mesaj</label>
+        <textarea id="mesaj" name="mesaj" placeholder="Merhaba Kaan, ..." data-i-attr="placeholder:f.mesaj.ph" maxlength="1000" required></textarea>
+        <span class="count" id="count" aria-hidden="true">0 / 1000</span></div>
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="_subject" value="Portfolyo sitesinden yeni mesaj">
-      <button class="btn pri" type="submit">Gönder</button>
-      <p class="hint">Tüm alanlar zorunludur.</p>
+      <button class="btn pri" type="submit" data-i="f.send">Gönder</button>
+      <p class="hint" data-i="f.hint">Tüm alanlar zorunludur.</p>
     </form>
   </div>
 </main>
-
 <div class="toast" id="toast" role="status" aria-live="polite"><p></p></div>
-
-<footer>© <span id="yr"></span> Kaan Semih Kurt · Şehzadeler, Manisa</footer>
-
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Kaan Semih Kurt · <span data-i="footer.loc">Şehzadeler, Manisa</span></span>
+    <a href="https://github.com/kaansemihkurt" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+<script src="i18n.js"></script>
 <script src="main.js"></script>
-<script>
-(() => {
-  const form = document.getElementById('contact-form');
-  const btn = form.querySelector('button[type="submit"]');
-  const toastEl = document.getElementById('toast');
-  const ta = form.elements.mesaj;
-  const cnt = document.getElementById('count');
-  let timer;
-
-  const count = () => { cnt.textContent = ta.value.length + ' / 1000'; };
-  ta.addEventListener('input', count);
-
-  function toast(msg, type = 'success') {
-    clearTimeout(timer);
-    toastEl.className = 'toast show ' + type;
-    toastEl.querySelector('p').textContent = msg;
-    timer = setTimeout(() => toastEl.classList.remove('show'), 5500);
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    // Yer tutucu adres değiştirilmediyse sahte başarı gösterme
-    if (form.action.includes('SENIN_FORM_KODUN')) {
-      toast('Form henüz bağlanmadı: iletisim.html içindeki action adresine Formspree form kodunu yaz.', 'error');
-      return;
-    }
-    const label = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Gönderiliyor…';
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      if (!res.ok) throw new Error('send failed');
-      toast('Mesajın gönderildi! En kısa sürede dönüş yapacağım.');
-      form.reset();
-      count();
-    } catch (err) {
-      toast('Mesaj gönderilemedi. Lütfen biraz sonra tekrar dene.', 'error');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = label;
-    }
-  });
-})();
-</script>
 </body>
 </html>

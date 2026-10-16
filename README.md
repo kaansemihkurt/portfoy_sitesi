@@ -1,85 +1,16 @@
-# Kaan Semih Kurt | Portfolyo
+# Kaan Semih Kurt — portföy v2 (taslak)
 
-Büyük veri analizi, yazılım ve donanım alanlarındaki çalışmalarımı bir araya getirdiğim kişisel portfolyo sitem.
+Hocanın sitesindeki sade bölüm düzeninden esinlenen, ama farklı bir görünümde (gece yarısı mavisi, serif başlıklar, mavi vurgu) hazırlanmış çok sayfalı portföy. Canlı siteye dokunulmadı; bu klasör yayına almaya hazır bir taslaktır.
 
-<!-- Yayına aldıktan sonra aşağıdaki satırı aç ve adresi düzelt:
-🔗 **Canlı site:** https://kullaniciadi.github.io/depo-adi
--->
+- Diller: Türkçe (varsayılan), İngilizce, Japonca. Sağ üstteki TR / EN / 日本語 düğmeleri; seçim tarayıcıda hatırlanır. `?lang=en` gibi bir adresle de açılabilir.
+- Tema: varsayılan gece yarısı mavisi; sağ üstteki düğmeyle açık mavi temaya geçilir ve seçim hatırlanır.
+- Sayfalar: `index.html`, `projeler.html`, `iletisim.html`.
+- Metinler: tüm çeviriler `i18n.js` içinde, anahtar → metin olarak durur. Bir cümleyi değiştirmek için ilgili anahtarın üç dildeki karşılığını düzenle.
+- İletişim formu önceki siteyle aynı Formspree adresine gider (`https://formspree.io/f/xdekjqaw`).
+- Proje önizleme görseli: `img/enflasyon-onizleme.png` (bulunamazsa canlı projenin görseli yüklenir).
 
-<!-- Ekran görüntüsü eklemek için dosyayı depoya yükle ve satırı aç:
-![Ana sayfa](ekran-goruntusu.png)
--->
+## Canlıya alma
+Depo: `kaansemihkurt/portfolyo_sitesi`. Bu klasörün içindekileri (img klasörü dahil) depoya yükleyip aynı adlı dosyaların üzerine yaz; Vercel otomatik yayınlar. Depodaki eski `main.js` ve `style.css` bu sürümle değişir.
 
-## Sayfalar
-
-| Sayfa | Dosya | İçerik |
-|---|---|---|
-| Ana sayfa | `index.html` | Tanıtım, hakkımda, eğitim ve deneyim, yetenekler |
-| Projeler | `projeler.html` | Veri analizi ve yazılım projelerim |
-| İletişim | `iletisim.html` | Mesaj formu |
-
-## Özellikler
-
-- Çok sayfalı yapı, tüm sayfalarda ortak menü
-- Koyu tema, cam efektli kartlar ve yağmur animasyonu
-- Daktilo efekti, kaydırma ilerleme çubuğu ve kaydırınca beliren bölümler
-- Mobil, tablet ve masaüstüyle uyumlu (responsive) tasarım
-- `prefers-reduced-motion` desteği: hareketi azaltmayı seçen kullanıcılarda animasyonlar kapanır
-- İletişim formu: zorunlu alan kontrolü, karakter sayacı, bot koruması ve gönderim bildirimi
-
-## Kullanılan teknolojiler
-
-- HTML5
-- CSS3 (framework kullanılmadı)
-- JavaScript (kütüphanesiz)
-- Google Fonts: Inter, Space Grotesk, IBM Plex Mono
-- [Formspree](https://formspree.io): iletişim formu için
-
-## Klasör yapısı
-
-```
-├── index.html
-├── projeler.html
-├── iletisim.html
-├── style.css
-├── main.js
-└── README.md
-```
-
-## Yerelde çalıştırma
-
-Derleme veya kurulum gerekmez.
-
-```bash
-git clone https://github.com/kullaniciadi/depo-adi.git
-cd depo-adi
-```
-
-Ardından `index.html` dosyasını tarayıcıda açman yeterli.
-
-## GitHub Pages ile yayınlama
-
-1. Depoda **Settings → Pages** bölümüne git.
-2. **Source** olarak `Deploy from a branch` seç.
-3. Dalı `main`, klasörü `/ (root)` olarak ayarla ve kaydet.
-4. Birkaç dakika sonra site `https://kullaniciadi.github.io/depo-adi` adresinde yayına girer.
-
-## İletişim formunu kendi hesabına bağlama
-
-Form, Formspree üzerinden çalışır. Kendi hesabını kullanmak için:
-
-1. Formspree'de yeni bir form oluştur.
-2. `iletisim.html` içindeki `<form>` etiketinin `action` adresini kendi form adresinle değiştir:
-
-   ```html
-   <form id="contact-form" action="https://formspree.io/f/FORM_KODUN" ...>
-   ```
-
-## İletişim
-
-- GitHub: [@Tomichami](https://github.com/Tomichami)
-- Site üzerindeki [iletişim formu](iletisim.html)
-
-## Lisans
-
-Bu depodaki içerik (metinler, projeler ve kişisel bilgiler) bana aittir. İzinsiz kopyalanıp kendi adına yayınlanamaz. Tasarım yapısından ilham alabilirsin.
+## Yerelde görmek
+`index.html` dosyasını tarayıcıda aç. Yazı tipleri Google Fonts'tan yüklenir (internet yoksa sistem yazı tipleri kullanılır).
