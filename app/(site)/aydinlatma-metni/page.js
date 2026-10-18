@@ -53,9 +53,14 @@ export default function AydinlatmaMetni() {
           </tbody>
         </table>
         <p>
-          Aktarım, formdaki onay kutusunu işaretleyerek verdiğiniz <strong>açık rızaya</strong> dayanılarak, 7499 sayılı Kanun
-          ile değişik KVKK md. 9 kapsamında yapılır. Onay vermemeniz durumunda form gönderilmez; bu durumda bana GitHub
-          profilim üzerinden de ulaşabilirsiniz.
+          <strong>Olası riskler:</strong> Kişisel Verileri Koruma Kurulu'nca bu ülkeler için ilan edilmiş bir yeterlilik kararı
+          bulunmadığından, yurt dışındaki sunucularda tutulan verileriniz Türkiye'deki koruma düzeyiyle birebir aynı güvencelere
+          tabi olmayabilir ve o ülkelerin mevzuatı kapsamında yetkili makamların erişimine konu olabilir.
+        </p>
+        <p>
+          Aktarım, bu riskler hakkında bilgilendirildikten sonra formdaki onay kutusunu işaretleyerek verdiğiniz
+          <strong>açık rızaya</strong> dayanılarak, 7499 sayılı Kanun ile değişik KVKK md. 9/6-a kapsamında yapılır. Onay
+          vermemeniz durumunda form gönderilmez; bu durumda bana GitHub profilim üzerinden de ulaşabilirsiniz.
         </p>
 
         <h2>5. Saklama süresi</h2>
