@@ -1,0 +1,12 @@
+# bağımlılıklar ve derleme çıktısı
+node_modules/
+.next/
+out/
+
+# GİZLİ: veritabanı adresi burada durur, GitHub'a GİTMEMELİ
+.env*
+!.env.example
+
+.vercel
+npm-debug.log*
+.DS_Store

@@ -223,3 +223,99 @@ footer a:hover{color:var(--ink)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .rv{opacity:1;transform:none}
 }
+
+/* =====================================================================
+   Veritabanı ödevi ile eklenenler: SSS, form durumları, aydınlatma metni,
+   giriş sayfası ve yönetim paneli
+   ===================================================================== */
+
+/* ---------- SSS ---------- */
+.sss{display:grid;gap:12px;margin-top:22px}
+.sss-grup{margin-top:38px}
+.sss-grup h2{font-size:1.35rem;margin-bottom:4px}
+.sss details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:border-color .2s}
+.sss details[open]{border-color:var(--line2)}
+.sss summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.sss summary::-webkit-details-marker{display:none}
+.sss summary::after{content:"+";font:500 1.3rem/1 var(--mono);color:var(--accent);transition:transform .2s;flex:none}
+.sss details[open] summary::after{transform:rotate(45deg)}
+.sss .cevap{padding:0 22px 20px;color:var(--mut);margin:0}
+.sss .cevap.bos{font-style:italic}
+.dil-notu:empty{display:none}
+.dil-notu{color:var(--mut);font-size:.9rem;margin-top:8px}
+
+/* ---------- iletişim formu (KVKK onayı ve durum mesajları) ---------- */
+.onay{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font:400 .9rem/1.5 var(--sans);letter-spacing:0}
+.onay input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent);padding:0}
+.onay-link{grid-column:1/-1;margin:-8px 0 0 28px;font-size:.88rem}
+.onay-link a{color:var(--accent)}
+
+/* ---------- aydınlatma metni ---------- */
+.metin{max-width:72ch}
+.metin h2{font-size:1.3rem;margin:34px 0 10px}
+.metin p,.metin li{color:var(--mut)}
+.metin strong{color:var(--ink)}
+.metin table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.93rem}
+.metin th,.metin td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.metin th{background:var(--bg2);color:var(--ink)}
+footer .alt-linkler{display:flex;gap:18px}
+
+/* ---------- giriş sayfası ---------- */
+.giris{min-height:100vh;display:grid;place-items:center;padding:24px}
+.giris-kart{width:min(420px,100%);display:grid;gap:16px;padding:32px}
+form.giris-kart{grid-template-columns:1fr}
+.giris-kart h1{font-size:1.8rem;margin:6px 0 0}
+.giris-kart .brand{margin:0}
+.giris-kart .btn{justify-self:stretch;justify-content:center}
+.geri{font-size:.88rem;color:var(--mut);text-decoration:none}
+.geri:hover{color:var(--ink)}
+.uyari{margin:0;padding:11px 14px;border-radius:10px;font-size:.92rem;border:1px solid}
+.uyari.hata{background:rgba(229,72,77,.12);border-color:rgba(229,72,77,.45);color:#ffb4b6}
+.uyari.bilgi,.uyari.basari{background:var(--accent-soft);border-color:var(--line2);color:var(--ink)}
+:root[data-theme="light"] .uyari.hata{color:#b42318}
+
+/* ---------- yönetim paneli ---------- */
+.adm-ust{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.adm-ust .wrap{display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
+.adm-ust .brand{margin-right:0}
+.adm-etiket{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+.adm-nav{display:flex;gap:4px;list-style:none;margin:0 auto 0 8px;padding:0;flex-wrap:wrap}
+.adm-nav a{display:block;text-decoration:none;color:var(--mut);font-size:.9rem;font-weight:500;padding:7px 12px;border-radius:999px}
+.adm-nav a:hover,.adm-nav a[aria-current="page"]{color:var(--ink);background:var(--bg2)}
+.adm-kim{font-size:.85rem;color:var(--mut)}
+.adm{padding:36px 0 60px}
+.adm h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px}
+.adm h2{font-size:1.25rem;margin:36px 0 12px}
+.adm .alt{color:var(--mut);margin:0 0 20px}
+.kutular{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px}
+.kutu{padding:22px}
+.kutu b{display:block;font:600 2.4rem/1.1 var(--serif)}
+.kutu span{color:var(--mut);font-size:.9rem}
+.kutu a{display:inline-block;margin-top:10px;font-size:.88rem;color:var(--accent)}
+.tablo-kap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+table.tbl{border-collapse:collapse;width:100%;font-size:.9rem}
+.tbl th{text-align:left;font:600 .75rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--mut);padding:12px 14px;border-bottom:1px solid var(--line);background:var(--bg2);white-space:nowrap}
+.tbl td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .sayi{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl .kisa{max-width:340px}
+.tbl .soluk{color:var(--mut)}
+.tbl tr.okunmamis td{background:var(--accent-soft)}
+.rozet{display:inline-block;padding:2px 9px;border-radius:999px;font:600 .72rem var(--sans);white-space:nowrap}
+.rozet.yesil{background:rgba(48,164,108,.15);color:#4cc38a}
+.rozet.kirmizi{background:rgba(229,72,77,.15);color:#ff8589}
+.rozet.gri{background:var(--bg2);color:var(--mut)}
+:root[data-theme="light"] .rozet.yesil{color:#1d7a46}
+:root[data-theme="light"] .rozet.kirmizi{color:#b42318}
+.islemler{display:flex;gap:6px;flex-wrap:wrap}
+.islemler form{display:inline}
+.kbtn{font:600 .78rem var(--sans);padding:6px 11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap}
+.kbtn:hover{border-color:var(--accent)}
+.kbtn.tehlike:hover{border-color:#e5484d;color:#ff8589}
+form.adm-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px}
+form.adm-form .btn{grid-column:auto}
+.adm-form .satir{grid-column:1/-1;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.adm-form .onay{grid-column:auto}
+.mesaj-metni{white-space:pre-wrap;margin:6px 0 0;color:var(--ink)}
+@media (max-width:640px){form.adm-form{grid-template-columns:1fr}}
+.soluk{color:var(--mut)}
