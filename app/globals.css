@@ -319,3 +319,9 @@ form.adm-form .btn{grid-column:auto}
 .mesaj-metni{white-space:pre-wrap;margin:6px 0 0;color:var(--ink)}
 @media (max-width:640px){form.adm-form{grid-template-columns:1fr}}
 .soluk{color:var(--mut)}
+
+/* aydınlatma metni: seçili dile göre tek bölüm görünür */
+.dil-en,.dil-ja{display:none}
+html[lang="en"] .dil-tr,html[lang="ja"] .dil-tr{display:none}
+html[lang="en"] .dil-en,html[lang="ja"] .dil-ja{display:block}
+.js .dil-tr .rv,.js .dil-en .rv,.js .dil-ja .rv{opacity:1;transform:none}
