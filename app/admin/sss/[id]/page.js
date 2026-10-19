@@ -20,7 +20,7 @@ export default async function SssDuzenle({ params, searchParams }) {
   const n = Number(id);
   if (!Number.isInteger(n) || n <= 0) notFound();
 
-  const [kayit] = await sql`SELECT id, soru, cevap, sira, kategori_id, yayinda FROM sss WHERE id = ${n}`;
+  const [kayit] = await sql`SELECT id, soru, cevap, sira, kategori_id, yayinda, soru_en, cevap_en, soru_ja, cevap_ja FROM sss WHERE id = ${n}`;
   if (!kayit) notFound();
   const kategoriler = await sql`SELECT id, ad FROM sss_kategorileri ORDER BY id`;
 

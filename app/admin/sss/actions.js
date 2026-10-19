@@ -19,12 +19,19 @@ function formuOku(formData) {
   const sira = sayiVeyaNull(formData.get('sira'));
   const kategori_id = sayiVeyaNull(formData.get('kategori_id'));
   const yayinda = formData.get('yayinda') === 'on';
+  // Çeviriler isteğe bağlı: boş bırakılırsa NULL kaydedilir, sitede Türkçesi gösterilir.
+  const ceviri = {};
+  for (const alan of ['soru_en', 'cevap_en', 'soru_ja', 'cevap_ja']) {
+    const v = String(formData.get(alan) ?? '').trim();
+    if (v.length > (alan.startsWith('soru') ? 500 : 3000)) return { hata: 'uzun' };
+    ceviri[alan] = v === '' ? null : v;
+  }
 
   if (!soru) return { hata: 'soru-bos' };
   if (soru.length > 500 || cevapHam.length > 3000) return { hata: 'uzun' };
   if (Number.isNaN(sira) || Number.isNaN(kategori_id)) return { hata: 'sayi' };
 
-  return { soru, cevap: cevapHam === '' ? null : cevapHam, sira, kategori_id, yayinda };
+  return { soru, cevap: cevapHam === '' ? null : cevapHam, sira, kategori_id, yayinda, ...ceviri };
 }
 
 function idOku(formData) {
@@ -46,8 +53,9 @@ export async function sssEkle(formData) {
   if (v.hata) redirect(`/admin/sss?hata=${v.hata}`);
 
   await sql`
-    INSERT INTO sss (soru, cevap, sira, kategori_id, yayinda)
-    VALUES (${v.soru}, ${v.cevap}, ${v.sira}, ${v.kategori_id}, ${v.yayinda})`;
+    INSERT INTO sss (soru, cevap, sira, kategori_id, yayinda, soru_en, cevap_en, soru_ja, cevap_ja)
+    VALUES (${v.soru}, ${v.cevap}, ${v.sira}, ${v.kategori_id}, ${v.yayinda},
+            ${v.soru_en}, ${v.cevap_en}, ${v.soru_ja}, ${v.cevap_ja})`;
 
   yenile();
   redirect('/admin/sss?ok=eklendi');
@@ -64,7 +72,8 @@ export async function sssGuncelle(formData) {
   await sql`
     UPDATE sss
     SET soru = ${v.soru}, cevap = ${v.cevap}, sira = ${v.sira},
-        kategori_id = ${v.kategori_id}, yayinda = ${v.yayinda}
+        kategori_id = ${v.kategori_id}, yayinda = ${v.yayinda},
+        soru_en = ${v.soru_en}, cevap_en = ${v.cevap_en}, soru_ja = ${v.soru_ja}, cevap_ja = ${v.cevap_ja}
     WHERE id = ${id}`;
 
   yenile();

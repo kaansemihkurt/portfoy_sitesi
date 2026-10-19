@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export default async function AnaSayfa() {
   // Görev 3.2 sorgusu (sıra numarasına göre ilk 5); sitede yalnızca yayındaki kayıtlar gösterilir.
   const oneCikanlar = await sql`
-    SELECT id, soru, cevap, sira
+    SELECT id, soru, cevap, soru_en, cevap_en, soru_ja, cevap_ja, sira
     FROM sss
     WHERE yayinda = true
     ORDER BY sira ASC
@@ -109,7 +109,6 @@ export default async function AnaSayfa() {
 
       <section className="section" id="sss">
         <div className="sec-head rv"><span className="n">05</span><h2 data-i="faq.feat">Öne çıkan sorular</h2></div>
-        <p className="dil-notu" data-i="faq.lang"></p>
         {oneCikanlar.length > 0 ? (
           <div className="rv"><SssListesi sorular={oneCikanlar} /></div>
         ) : (

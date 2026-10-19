@@ -12,6 +12,22 @@ export default function SssFormu({ action, kategoriler, kayit, dugme }) {
         <textarea id="cevap" name="cevap" maxLength={3000} defaultValue={kayit?.cevap ?? ''} />
       </div>
       <div className="fld">
+        <label htmlFor="soru_en">Soru (İngilizce, isteğe bağlı)</label>
+        <input id="soru_en" name="soru_en" maxLength={500} defaultValue={kayit?.soru_en ?? ''} />
+      </div>
+      <div className="fld">
+        <label htmlFor="soru_ja">Soru (Japonca, isteğe bağlı)</label>
+        <input id="soru_ja" name="soru_ja" maxLength={500} defaultValue={kayit?.soru_ja ?? ''} />
+      </div>
+      <div className="fld">
+        <label htmlFor="cevap_en">Cevap (İngilizce, isteğe bağlı)</label>
+        <textarea id="cevap_en" name="cevap_en" maxLength={3000} defaultValue={kayit?.cevap_en ?? ''} />
+      </div>
+      <div className="fld">
+        <label htmlFor="cevap_ja">Cevap (Japonca, isteğe bağlı)</label>
+        <textarea id="cevap_ja" name="cevap_ja" maxLength={3000} defaultValue={kayit?.cevap_ja ?? ''} />
+      </div>
+      <div className="fld">
         <label htmlFor="kategori_id">Kategori</label>
         <select id="kategori_id" name="kategori_id" defaultValue={kayit?.kategori_id ?? ''}>
           <option value="">(Kategorisiz)</option>
