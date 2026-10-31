@@ -1,5 +1,8 @@
 import { GithubIkon } from '@/components/Ikonlar';
 
+// ⚠ KAAN: Zafiyet panosu canlı adresini yaz (ör. 'https://xxx.azurestaticapps.net'); null iken link gösterilmez.
+const ZAFIYET_URL = null;
+
 export const metadata = {
   title: 'Projeler | Kaan Semih Kurt',
   description: 'Kaan Semih Kurt - Büyük veri analizi ve yazılım projeleri.',
@@ -15,6 +18,26 @@ export default function ProjelerSayfasi() {
       </div>
       <div style={{ marginTop: 34 }}>
         <article className="card feature rv">
+          <a className="thumb-link" href="/projeler/mitre-attack">
+            <img className="thumb" src="/img/mitre-attack-onizleme.png" width="900" height="470" loading="lazy" alt="MITRE ATT&CK tehdit grubu–teknik ağının önizlemesi: renkli düğümler tehdit grubu toplulukları, gri düğümler teknikler" data-i-attr="alt:p0.alt" />
+          </a>
+          <div className="body">
+            <p className="eyebrow" data-i="p0.label">SOSYAL AĞ ANALİZİ PROJESİ</p>
+            <h3 data-i="p0.h">Tehdit İstihbaratında İki Parçalı Ağ Analizi (MITRE ATT&amp;CK)</h3>
+            <p style={{ marginTop: 14 }} data-i="p0.d">Sosyal Ağ Analizi dersi dönem ödevi. 174 siber tehdit grubunu kullandıkları 515 saldırı tekniğine bağlayan iki parçalı ağı kurdum; hangi grupların benzer davrandığını ve sınırlı bütçeli bir savunma ekibinin hangi teknikleri önce tespit etmesi gerektiğini ağ analiziyle yanıtladım.</p>
+            <ul>
+              <li data-i="p0.b1">Python (networkx) ile MITRE ATT&amp;CK STIX verisinden ağı kurdum; Newman ağırlıklı projeksiyon, Louvain/Leiden toplulukları ve 100 rastgele ağlık null model ile topluluk yapısının rastlantı olmadığını gösterdim.</li>
+              <li data-i="p0.b2">Açgözlü kapsama analiziyle yalnızca 6 tekniğin grupların %90&apos;ını yakaladığını buldum; sonuçları arama, detay paneli ve topluluk filtresi olan TR/EN etkileşimli bir ağda (Cytoscape.js) yayımladım.</li>
+            </ul>
+            <ul className="tags"><li className="tag">Python</li><li className="tag">networkx</li><li className="tag" data-i="p0.t3">Ağ analizi</li><li className="tag" data-i="p0.t4">Siber güvenlik</li><li className="tag">Cytoscape.js</li></ul>
+            <div className="links">
+              <a className="rep" href="/projeler/mitre-attack" data-i="p0.live">Etkileşimli ağı aç →</a>
+              <a className="rep" href="https://github.com/kaansemihkurt/mitre-attack-network-analysis" target="_blank" rel="noopener"><GithubIkon /><span data-i="p0.gh">Projeyi GitHub&apos;da gör</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article className="card feature rv" style={{ marginTop: 24 }}>
           <a className="thumb-link" href="https://kaansemihkurt.github.io/tufe-enflasyon/" target="_blank" rel="noopener">
             <img className="thumb" src="/img/enflasyon-onizleme.png" width="900" height="470" loading="lazy" alt="Enflasyon veri hikâyesinin önizlemesi: 13 harcama grubunun fiyat artışı, eğitim %1.281, giyim %209, genel TÜFE %765" data-i-attr="alt:p1.alt" />
           </a>
@@ -31,6 +54,18 @@ export default function ProjelerSayfasi() {
               <a className="rep" href="https://kaansemihkurt.github.io/tufe-enflasyon/" target="_blank" rel="noopener" data-i="p1.live">Canlı siteyi aç →</a>
               <a className="rep" href="https://github.com/kaansemihkurt/tufe-enflasyon" target="_blank" rel="noopener"><GithubIkon /><span data-i="p1.gh">Projeyi GitHub&apos;da gör</span></a>
             </div>
+          </div>
+        </article>
+
+        <article className="card more rv" style={{ marginTop: 24 }}>
+          <p className="eyebrow" data-i="zp.card.label">CANLI VERİ ÜRÜNÜ · BULUT GÜVENLİĞİ</p>
+          <h3 data-i="zp.h">Zafiyet İstihbarat Panosu</h3>
+          <p data-i="zp.card.d">NVD CVE ve CISA KEV verisini her sabah otomatik çeken, izleme listesi ve açıklanabilir öncelik puanıyla kritik zafiyetleri sıralayan SOC panosu. Ekip panosu Zero Trust erişimle (Entra ID + MFA, rol bazlı) korunuyor.</p>
+          <ul className="tags"><li className="tag">Python</li><li className="tag">GitHub Actions</li><li className="tag">ECharts</li><li className="tag">Azure</li><li className="tag">PWA</li></ul>
+          <div className="links" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 10 }}>
+            <a className="btn pri" href="/projeler/zafiyet-panosu" data-i="zp.card.case">Vaka çalışması →</a>
+            {ZAFIYET_URL && <a className="rep" href={ZAFIYET_URL} target="_blank" rel="noopener" data-i="zp.case.live">Canlı ürünü aç →</a>}
+            <a className="rep" href="https://github.com/kaansemihkurt/zafiyet-panosu" target="_blank" rel="noopener"><GithubIkon /><span data-i="p0.gh">Projeyi GitHub&apos;da gör</span></a>
           </div>
         </article>
 
